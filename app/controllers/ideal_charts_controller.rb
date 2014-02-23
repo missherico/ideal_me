@@ -1,0 +1,2 @@
+class IdealChartsController < ApplicationController
+end
