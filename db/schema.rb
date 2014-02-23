@@ -11,10 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223210443) do
+ActiveRecord::Schema.define(version: 20140223215951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "realchart_id"
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activities", ["category_id"], name: "index_activities_on_category_id", using: :btree
+  add_index "activities", ["realchart_id"], name: "index_activities_on_realchart_id", using: :btree
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ideal_charts", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "health_score"
+    t.integer  "social_score"
+    t.integer  "intellect_score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ideal_charts", ["user_id"], name: "index_ideal_charts_on_user_id", using: :btree
+
+  create_table "interests", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "interests", ["activity_id"], name: "index_interests_on_activity_id", using: :btree
+  add_index "interests", ["user_id"], name: "index_interests_on_user_id", using: :btree
+
+  create_table "real_charts", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "real_charts", ["user_id"], name: "index_real_charts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
