@@ -1,5 +1,6 @@
 IdealMe::Application.routes.draw do
 
+  get "users/dashboard"
   root :to => "site#index"
 
   get '/users/:id/dashboard', to: "users#dashboard"
