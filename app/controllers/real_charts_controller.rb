@@ -1,2 +1,6 @@
 class RealChartsController < ApplicationController
+
+	
+
+
 end
