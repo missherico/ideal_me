@@ -60,11 +60,7 @@ GEM
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
-<<<<<<< HEAD
-    devise (3.2.2)
-=======
     devise (3.2.3)
->>>>>>> upstream/master
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
