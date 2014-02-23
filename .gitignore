@@ -16,10 +16,11 @@
 /tmp
 
 # Ignore other unneeded files
-/.env
+.env
 .DS_Store
 .idea
 .secret
 doc/
 *.swp
 *~
+
