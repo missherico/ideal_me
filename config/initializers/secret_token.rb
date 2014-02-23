@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-IdealMe::Application.config.secret_key_base = 'b26bd408661dd7cdced2640880c4b96d897f7b7885d73c552cde5cae73b28fc6f3a076afbaeeadd9a4e869344f844dd913ca70e426e96a2376a83f4441cad645'
+IdealMe::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
