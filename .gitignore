@@ -15,8 +15,11 @@
 /log/*.log
 /tmp
 
+# Ignore other unneeded files
 .env
 .DS_Store
 .idea
 .secret
-
+doc/
+*.swp
+*~
