@@ -18,6 +18,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'devise'
+gem 'unicorn'
+gem 'sidekiq'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -30,6 +34,29 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'quiet_assets'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'dotenv-rails'
+  gem 'awesome_print' 
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+end
+
+group :production do
+  gem 'rails_12factor'
+  ruby "2.0.0"
 end
 
 # Use ActiveModel has_secure_password
