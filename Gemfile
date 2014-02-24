@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'unicorn'
 gem 'sidekiq'
+gem 'active_model_serializers'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
