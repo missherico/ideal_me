@@ -53,9 +53,9 @@ group :development, :test do
   gem 'pry-byebug'
 end
 
-  group :test, :darwin do
-    gem 'rb-fsevent'
-  end
+  # group :test, :darwin do
+  #   gem 'rb-fsevent'
+  # end
 
 group :production do
   gem 'rails_12factor'
