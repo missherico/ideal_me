@@ -1,4 +1,4 @@
-  # encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223215951) do
+ActiveRecord::Schema.define(version: 20140224223606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: true do |t|
     t.integer  "category_id"
-    t.integer  "realchart_id"
+    t.integer  "real_chart_id"
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "activities", ["category_id"], name: "index_activities_on_category_id", using: :btree
-  add_index "activities", ["realchart_id"], name: "index_activities_on_realchart_id", using: :btree
+  add_index "activities", ["real_chart_id"], name: "index_activities_on_real_chart_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "name"
