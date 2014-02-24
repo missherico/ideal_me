@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-    redirect_to users_dashboard
+    redirect_to user_dashboard_path(current_user.id)
   end
 
   def create
@@ -26,7 +26,7 @@ class ActivitiesController < ApplicationController
       format.html
       format.json {render json: @activity}
     end
-     redirect_to users_dashboard
+     redirect_to user_dashboard_path(current_user.id)
   end
 
   def update
@@ -37,13 +37,13 @@ class ActivitiesController < ApplicationController
       format.html
       format.json {render json: @activity}
     end
-     redirect_to users_dashboard
+     redirect_to user_dashboard(current_user.id)
   end
 
   def destroy
      activity = Adventure.find(params[:id])
      activity.destroy
-     redirect_to users_dashboard
+     redirect_to user_dashboard_path(current_user.id)
   end
 
 end
