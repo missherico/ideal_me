@@ -23,8 +23,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
-  has_many :realcharts
-  has_many :idealcharts
+  has_many :real_charts
+  has_many :ideal_charts
   has_many :interests
 
   devise :database_authenticatable, :registerable,
