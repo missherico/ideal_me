@@ -41,9 +41,6 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'launchy'
   gem 'database_cleaner'
-  group :darwin do
-    gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
-  end
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'dotenv-rails'
@@ -55,6 +52,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
 end
+
+  group :test, :darwin do
+    gem 'rb-fsevent'
+  end
 
 group :production do
   gem 'rails_12factor'
