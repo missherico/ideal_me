@@ -1,9 +1,10 @@
 IdealMe::Application.routes.draw do
 
-  get "users/dashboard"
+ 
   root :to => "site#index"
 
-  get '/users/:id/dashboard', to: "users#dashboard"
+  get '/users/:id/dashboard', to: "users#dashboard", as: :user_dashboard
+
 
   resources :users do
     resources :idealchart
@@ -16,6 +17,7 @@ IdealMe::Application.routes.draw do
   resources :realchart do 
     resources :activities
   end
+
 
 
   devise_for :users
