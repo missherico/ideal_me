@@ -8,7 +8,7 @@ Devise.setup do |config|
 
   puts "RUNNING.... SECRET_TOKEN setup"
   puts "The ENV is as follows \n"
-  puts ENV
+  puts ENV['SECRET_TOKEN']
   config.secret_key=ENV['SECRET_TOKEN']
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
