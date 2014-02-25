@@ -55,6 +55,8 @@ group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'capybara'
+  gem "factory_girl_rails", "~> 4.4.0"
 end
 
   group :test, :darwin do
