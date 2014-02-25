@@ -2,12 +2,12 @@
 #
 # Table name: activities
 #
-#  id           :integer          not null, primary key
-#  category_id  :integer
+#  id            :integer          not null, primary key
+#  category_id   :integer
 #  real_chart_id :integer
-#  body         :string(255)
-#  created_at   :datetime
-#  updated_at   :datetime
+#  body          :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
 #
 
 class Activity < ActiveRecord::Base
