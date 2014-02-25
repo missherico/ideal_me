@@ -80,6 +80,9 @@ GEM
     execjs (2.0.2)
     ffi (1.9.3)
     formatador (0.2.4)
+    gon (5.0.4)
+      actionpack (>= 2.3.0)
+      json
     guard (2.4.0)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -257,6 +260,7 @@ DEPENDENCIES
   database_cleaner
   devise
   dotenv-rails
+  gon
   guard-livereload
   guard-rspec
   handlebars_assets
