@@ -43,7 +43,6 @@ window.onload = function () {
       _this.updateIdealData(updatedIdealData, function(data){
         var chartData = chart.options.data[0].dataPoints;
         var newIdealData = data.ideal_chart;
-        console.log(newIdealData);
         chartData[0].y = newIdealData.health_score;
         chartData[1].y  = newIdealData.social_score;
         chartData[2].y  = newIdealData.intellect_score;
