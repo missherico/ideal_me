@@ -46,14 +46,14 @@ window.onload = function () {
         chartData[0].y = newIdealData.health_score;
         chartData[1].y  = newIdealData.social_score;
         chartData[2].y  = newIdealData.intellect_score;
-        idealChart.render();
+        chart.render();
       });
 
 
     });    
   });
 
-  var idealChart = new CanvasJS.Chart("idealChartContainer",
+  var chart = new CanvasJS.Chart("idealChartContainer",
     {
       title:{
         text: "Ideal Chart"
@@ -71,5 +71,5 @@ window.onload = function () {
      ]
    });
 
-    idealChart.render();
+    chart.render();
   };
