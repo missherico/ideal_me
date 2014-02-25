@@ -35,10 +35,8 @@ class IdealChartsController < ApplicationController
    def show
      @idealchart =IdealChart.find(params[:id])
     respond_to do |format|
-      format.html
+      format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @idealchart}
     end
-     redirect_to user_dashboard_path(current_user.id)
    end
-
 end
