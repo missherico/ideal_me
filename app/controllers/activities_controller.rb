@@ -12,8 +12,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    new_activity = params.require(:activity).permit(:category_id, :realchart_id, :body)
+    new_activity = params.require(:activity).permit(:category_id, :real_chart_id, :body)
     @activity = Activity.create(new_activity)
+    if @activity.real_chart_id == nil
+       Interest.create(user_id: current_user.id, activity_id: @activity.id)
+    end
     respond_to do |format|
       format.html
       format.json {render json: @activity}
@@ -21,7 +24,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity =Activity.find(params[:id])
+    @activity = Activity.find(params[:id])
     respond_to do |format|
       format.html
       format.json {render json: @activity}
@@ -31,7 +34,7 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity = Activity.find(params[:id])
-    @activity.update_attributes(params.require(:activity).permit(:category_id, :realchart_id, :body))
+    @activity.update_attributes(params.require(:activity).permit(:category_id, :real_chart_id, :body))
     redirect_to _path
     respond_to do |format|
       format.html
