@@ -27,19 +27,16 @@ class IdealChartsController < ApplicationController
     @idealchart = IdealChart.find(params[:id])
     @idealchart.update_attributes(params.require(:ideal_chart).permit(:health_score, :social_score, :intellect_score))
     respond_to do |format|
-      format.html
+      format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @idealchart}
     end
-     redirect_to user_dashboard(current_user.id)
    end
 
    def show
     @idealchart = IdealChart.find(params[:id])
     respond_to do |format|
-      format.html
+      format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @idealchart}
     end
-     redirect_to user_dashboard_path(current_user.id)
    end
-
 end
