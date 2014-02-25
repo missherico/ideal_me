@@ -1,7 +1,7 @@
 class RealChartsController < ApplicationController
    before_filter :authenticate_user!
 
-   def index
+   def index 
     @realcharts = RealChart.all
    end
 
