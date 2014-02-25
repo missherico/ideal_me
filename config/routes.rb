@@ -6,21 +6,16 @@ IdealMe::Application.routes.draw do
 
   get '/users/:id/dashboard', to: "users#dashboard", as: :user_dashboard
 
-
   resources :users do
-    resources :idealchart
+    resources :ideal_charts
   end
 
   resources :users do
-    resources :realchart
+    resources :real_charts
   end
 
-  resources :realchart do 
+  resources :real_charts do 
     resources :activities
   end
-
-
-
-
 
 end
