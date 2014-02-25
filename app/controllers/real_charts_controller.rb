@@ -6,9 +6,7 @@ class RealChartsController < ApplicationController
    end
 
    def create
-    @realchart = RealChart.create(user_id: current_user.id)
-    
-   
+    @realchart = RealChart.create(user_id: current_user.id) 
    end
 
    def new
