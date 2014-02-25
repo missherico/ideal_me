@@ -34,7 +34,7 @@ class IdealChartsController < ApplicationController
    end
 
    def show
-     @idealchart =IdealChart.find(params[:id])
+    @idealchart = IdealChart.find(params[:id])
     respond_to do |format|
       format.html
       format.json {render json: @idealchart}
