@@ -83,6 +83,7 @@ GEM
       http_parser.rb (~> 0.5.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    excon (0.31.0)
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -134,6 +135,13 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mandrill-api (1.0.51)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
+    mandrill_mailer (0.4.3)
+      actionpack
+      activesupport
+      mandrill-api (~> 1.0.9)
     meta_request (0.2.8)
       callsite
       rack-contrib
@@ -285,6 +293,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   launchy
+  mandrill_mailer
   meta_request
   pg
   pry
