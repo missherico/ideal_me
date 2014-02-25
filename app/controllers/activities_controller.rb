@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_filter :signed_in_user, only: [:index]
+   before_filter :authenticate_user!
 
   def index
     #take out photos
