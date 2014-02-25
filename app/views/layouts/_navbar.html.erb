@@ -18,11 +18,10 @@
    </ul>
    <div class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-        <li>Hello, <%=link_to current_user.first_name, edit_user_registration_path%> </li>
+        <li>Hello, <%=link_to current_user.email, edit_user_registration_path%> </li>
         <li> <%= link_to "Account", edit_user_registration_path %></li>
         <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
       <% else %>
-
          <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="email">
@@ -32,9 +31,8 @@
           </div>
         <!--   <button type="submit" class="btn btn-default">Login</button> -->
         </form>
-        
-        <!-- <li> <#%= link_to "Sign up", new_user_registration_path %> </li> -->
-        <!-- <li> <#%= link_to "Login", new_user_session_path %> </li> -->
+        <li> <%= link_to "Sign up", new_user_registration_path %> </li>
+        <li> <%= link_to "Login", new_user_session_path %> </li>
       <% end %>
     </div>    
   </div> 
