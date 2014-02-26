@@ -11,7 +11,7 @@
 <div id='idealChartContainer' style="height: 300px; width: 100%;">
 </div>
 
-<div class=container>
+<div class="container">
   <form id='updateIdeal'>
     <label>Health:</label> <input id='health' name='ideal_chart[health_score]' value='<%= @idealchart.health_score %>'>
     <label>Social: </label> <input id='social' name='ideal_chart[social_score]' value='<%= @idealchart.social_score %>'>
@@ -30,11 +30,10 @@
     <div>
       <%= image_tag image.image_url(:thumb).to_s %>
       <div><%= image.body %>
-      </div>   
-      <div>
         <%#= link_to "edit", edit_real_chart_activity(activity) %><!--  | -->
-        <%= link_to "delete", real_chart_activity_path(@real_chart.id, image.id), method: :delete %>
+        <%= button_to "delete", real_chart_activity_path(@real_chart.id, image.id), method: :delete, class: "btn btn-primary btn-sm" %>
       </div>
+      <br>
     </div>
   <% end %>
 </div>
