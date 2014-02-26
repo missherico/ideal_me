@@ -12,7 +12,8 @@
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav navbar-nav">
-    <li><a href="/"><b>Ideal Me</b></a></li>
+    <!-- <li><%#= link_to "The Ideal Me", root_path %></li> -->
+    <li><a href="/"><b>The Ideal Me</b></a></li>
     <!-- <li><a href="/users/:id/dashboard">My Charts</a></li> -->
     <% if user_signed_in? %>
     <li><%= link_to "My Charts", user_dashboard_path(current_user.id) %></li>
@@ -25,8 +26,6 @@
       <li id="logout"> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
     <% else %>
       <li><%= link_to "Sign up", new_user_registration_path %></li>
-        <!-- <li><%#= link_to "Login", new_user_session_path %> </li> -->
-      
       <li class="nav navbar-text">
         <%= form_for :user, url: "/users/sign_in", method: :post do |f| %>
           <%= f.email_field :email, placeholder: "email", :autofocus => true %>
