@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
     new_activity = params.require(:activity).permit(:category_id, :real_chart_id, :body)
     @activity = Activity.create(new_activity)
     if @activity.real_chart_id == nil
-       Interest.create(user_id: current_user.id, activity_id: @activity.id)
+       current_user.interests.create(activity_id: @activity.id)
     end
     respond_to do |format|
       format.html

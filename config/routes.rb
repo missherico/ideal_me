@@ -14,7 +14,7 @@ IdealMe::Application.routes.draw do
     resources :real_charts
   end
 
-  resources :real_charts do 
+  resources :real_charts, :ideal_charts do 
     resources :activities
   end
 

@@ -53,6 +53,14 @@ window.onload = function () {
     });    
   });
 
+
+
+  var Action = {};
+
+  Action.urls ={
+    create : { path : "/real_charts/", method : 'post'}
+  };
+
   var chart = new CanvasJS.Chart("idealChartContainer",
     {
       title:{
