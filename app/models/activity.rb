@@ -15,5 +15,5 @@ class Activity < ActiveRecord::Base
   belongs_to :real_chart
 
   has_many :interests
-  
+  mount_uploader :image, ImageUploader
 end
