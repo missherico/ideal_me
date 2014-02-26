@@ -11,7 +11,7 @@ class EmailWorker
         time_since_last_activity = Time.now - user_activity.created_at
         #A day has 86,400 seconds, 5 days has 432,000 seconds
         if (time_since_last_activity > 432,000)
-          RemdinderMailer.remind(user).deliver
+          ReminderMailer.remind(user).deliver
         end
      end
    end
