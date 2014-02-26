@@ -7,9 +7,11 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="container-fluid">
-<%= render partial: "/layouts/navbar" %>
 
+<body class="container-fluid">
+<div class='col-xs-12'>
+  <%= render partial: "/layouts/navbar" %>
+</div>
  <p class="notice"><%= notice %></p>
  <p class="alert"><%= alert %></p>
 
