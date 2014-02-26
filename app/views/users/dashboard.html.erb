@@ -23,3 +23,17 @@
   </form>
 
 </div>
+
+<!-- Below code is for Carrierwave; note the potential bug in line 3:  <input id='activity_body' name='activity[body'> -->
+<%= form_for @activity, :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :real_chart_id %>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
