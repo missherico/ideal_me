@@ -64,7 +64,7 @@ window.onload = function () {
        toolTipContent: "{activity}",                
        dataPoints: [
        {  y: gon.idealchart.health_score, indexLabel: "Health", activity: gon.healthInterests },
-       {  y: gon.idealchart.social_score, indexLabel: "Social", activity: gon.socailInterests },
+       {  y: gon.idealchart.social_score, indexLabel: "Social", activity: gon.socialInterests },
        {  y: gon.idealchart.intellect_score, indexLabel: "Intellect", activity: gon.intellectInterests },
        ]
      }
