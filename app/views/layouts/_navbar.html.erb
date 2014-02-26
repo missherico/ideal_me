@@ -22,18 +22,16 @@
   <ul class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
       <p class="nav navbar-text">Hello, <%=link_to current_user.first_name, edit_user_registration_path%> </p>
-      <!-- <li> </li> -->
-      <!-- <li> <%#= link_to "Account", edit_user_registration_path %></li> -->
-      <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+      <li id="logout"> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
     <% else %>
       <li><%= link_to "Sign up", new_user_registration_path %></li>
         <!-- <li><%#= link_to "Login", new_user_session_path %> </li> -->
-        
-      <li>
+      
+      <li class="nav navbar-text">
         <%= form_for :user, url: "/users/sign_in", method: :post do |f| %>
           <%= f.email_field :email, placeholder: "email", :autofocus => true %>
           <%= f.password_field :password, placeholder: "password" %>
-          <%= f.submit "Login", class: "btn btn-primary btn-sm" %>
+          <%= f.submit "Login", class: "btn btn-primary btn-sm" %> &nbsp; &nbsp;
         <% end %>
       </li>
     <% end %>
