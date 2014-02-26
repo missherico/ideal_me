@@ -13,7 +13,8 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav navbar-nav">
     <li><a href="/"><b>Ideal Me</b></a></li>
-    <li><a href="/users/:id/dashboard">My Charts</a></li>
+    <!-- <li><a href="/users/:id/dashboard">My Charts</a></li> -->
+    <li><%= link_to "My Charts", user_dashboard_path(current_user.id) %></li>
   </ul>
   
   <ul class="nav navbar-nav navbar-right">

@@ -33,7 +33,7 @@
       </div>   
       <div>
         <%#= link_to "edit", edit_real_chart_activity(activity) %><!--  | -->
-        <%#= link_to real_chart_activity_path(@real_chart.id, @user.id), image, method: :delete %>
+        <%= link_to "delete", real_chart_activity_path(@real_chart.id, image.id), method: :delete %>
       </div>
     </div>
   <% end %>
