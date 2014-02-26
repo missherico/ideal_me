@@ -26,6 +26,8 @@ gem 'unicorn'
 gem 'sidekiq'
 gem 'active_model_serializers'
 gem 'gon'
+gem 'carrierwave'
+gem 'rmagick'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

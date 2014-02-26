@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     gon.user_id = current_user.id
     gon.watch.idealchart = @idealchart.attributes
 
+    # JS - ideal interests 
     socialInterests = Activity.find_by_user_id_and_category_id(@user.id, 1)
     healthInterests = Activity.find_by_user_id_and_category_id(@user.id, 2)
     intellectInterests = Activity.find_by_user_id_and_category_id(@user.id, 3)
@@ -21,5 +22,9 @@ class UsersController < ApplicationController
     gon.socialInterests = socialArray
     gon.healthInterests = healthArray
     gon.intellectInterests = intellectArray
+    
+    # instances for carrier upload / image upload
+    @activities = Activity.all
+    @real_chart = RealChart.find_by(user_id: @user.id)
   end
 end

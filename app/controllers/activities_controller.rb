@@ -12,13 +12,13 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    new_activity = params.require(:activity).permit(:category_id, :real_chart_id, :body)
+    new_activity = params.require(:activity).permit(:category_id, :real_chart_id, :body, :image)
     @activity = Activity.create(new_activity)
     if @activity.real_chart_id == nil
        current_user.interests.create(activity_id: @activity.id)
     end
     respond_to do |format|
-      format.html
+      format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @activity}
     end
   end
@@ -34,7 +34,7 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity = Activity.find(params[:id])
-    @activity.update_attributes(params.require(:activity).permit(:category_id, :real_chart_id, :body))
+    @activity.update_attributes(params.require(:activity).permit(:category_id, :real_chart_id, :body, :image))
     redirect_to _path
     respond_to do |format|
       format.html

@@ -1,16 +1,13 @@
 <div id='idealChartContainer' style="height: 300px; width: 100%;">
-
 </div>
 
-
-<div>
+<div class="container">
   <form id='updateIdeal'>
-    <label>Health:</label> <input id='health' name='ideal_chart[health_score]' value='<%= @idealchart.health_score %>'>
-    <label>Social: </label> <input id='social' name='ideal_chart[social_score]' value='<%= @idealchart.social_score %>'>
-    <label>Intellect: </label> <input id='intellect' name='ideal_chart[intelllect_score]' value='<%= @idealchart.intellect_score %>'>
-    <button name='button'>Update</button>
+    <label>Health:</label> <input id='health' name='ideal_chart[health_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.health_score %>'>
+    <label>Social: </label> <input id='social' name='ideal_chart[social_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.social_score %>'>
+    <label>Intellect: </label> <input id='intellect' name='ideal_chart[intelllect_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.intellect_score %>'>
+    <button class='btn btn-success'>Update</button>
   </form>
-
 </div>
 
 
@@ -24,4 +21,21 @@
 </form>
 
 </div>
+<br>
+<br>
 
+<!-- carrierwave placeholder code below -->
+<%= render partial: "/users/form" %>
+
+<div class="container">
+  <% @activities.each do |image| %>
+    <div>
+      <%= image_tag image.image_url(:thumb).to_s %>
+      <div><%= image.body %>
+        <%#= link_to "edit", edit_real_chart_activity(activity) %><!--  | -->
+        <%= button_to "delete", real_chart_activity_path(@real_chart.id, image.id), method: :delete, class: "btn btn-primary btn-sm" %>
+      </div>
+      <br>
+    </div>
+  <% end %>
+</div>
