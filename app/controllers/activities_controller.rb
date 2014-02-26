@@ -44,7 +44,7 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-     activity = Adventure.find(params[:id])
+     activity = Activity.find(params[:id])
      activity.destroy
      redirect_to user_dashboard_path(current_user.id)
   end
