@@ -55,11 +55,55 @@ window.onload = function () {
 
 
 
-  var Action = {};
+  var Activity = {};
 
-  Action.urls ={
-    create : { path : "/real_charts/", method : 'post'}
+  Activity.urls ={
+    create : { path : "/real_charts/nil/activities.json", method : 'post'}
   };
+
+  Activity.saveActivity = function(activityReal, callback){
+    var data = { activity : activityReal };
+    $.ajax({
+      url : this.urls.create.path,
+      type : this.urls.create.method,
+      data : data}).done(callback);
+  };
+
+  Activity.doThis = function(fn){
+    fn.apply(Activity);
+    return this;
+  };
+
+  Activity.doThis(function(){
+    var _this = this;
+
+    $("#addActivity").on("submit", function(event){
+      event.preventDefault();
+
+      var newActivity = {body: $("#activity_body").val()};
+      var selectedVal = "";
+      var selected = $("input[type='radio'][name='activity[cateogry_id]']:checked");
+      if (selected.length > 0) {
+        selectedVal = selected.val();
+      }
+      newActivity.category_id = selectedVal;
+      _this.saveActivity(newActivity, function(data){
+        console.log(data);
+        var chartData = chart.options.data[0].dataPoints;
+        if (data.activity.category_id === "1"){
+          chartData[0].activity.push(newActivity.body);
+        } else if (data.activity.category_id === "2") {
+          chartData[1].activity.push(newActivity.body);
+        } else {
+          chartData[2].activity.push(newActivity.body);
+        }
+        chart.render();
+      });
+
+
+    });
+
+  });
 
   var chart = new CanvasJS.Chart("idealChartContainer",
     {
