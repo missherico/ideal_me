@@ -28,13 +28,12 @@ class User < ActiveRecord::Base
   has_many :interests
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable      
 
   after_create :welcome_email
 
   def welcome_email
     SignupMailer.signup(self).deliver
   end
- 
 
 end
