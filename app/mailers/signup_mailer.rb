@@ -5,12 +5,14 @@ class SignupMailer < MandrillMailer::TemplateMailer
   #    subject: I18n.t('Welcome'),
   #    to: [{email: "syviecottrell@gmail.com"}]
   # end
-  def signup()
+  def signup(user)
   mandrill_mail template: 'Welcome',
-                subject: I18n.t('Welcome'),
-                to: { email: 'sylviecottrell@gmail.com'}
-               
-                
+                subject: 'Welcome',
+                to: { email: user.email},
+                vars: {
+                  "FIRST_NAME" => user.first_name || "NO FIRST NAME",
+                  "LAST_NAME"  => user.last_name || "NO LAST NAME"
+                }              
   end
   
 

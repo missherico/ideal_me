@@ -30,5 +30,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  after_create :welcome_email
+
+  def welcome_email
+    SignupMailer.signup(self).deliver
+  end
+ 
 
 end
