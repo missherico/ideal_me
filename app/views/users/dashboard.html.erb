@@ -1,8 +1,7 @@
-<div>
-<form id='addActivity'>
-  <input id='activity_body' name='activity[body'>
-</form>
-
+<div class="container">
+  <form id='addActivity'>
+    <input id='activity_body' name='activity[body'>
+  </form>
 </div>
 
 <div id='activities'>
@@ -10,33 +9,31 @@
 
 
 <div id='idealChartContainer' style="height: 300px; width: 100%;">
-
 </div>
 
-
-<div>
+<div class=container>
   <form id='updateIdeal'>
     <label>Health:</label> <input id='health' name='ideal_chart[health_score]' value='<%= @idealchart.health_score %>'>
     <label>Social: </label> <input id='social' name='ideal_chart[social_score]' value='<%= @idealchart.social_score %>'>
     <label>Intellect: </label> <input id='intellect' name='ideal_chart[intelllect_score]' value='<%= @idealchart.intellect_score %>'>
-    <button name='button'>Update</button>
+    <button class='btn btn-success'>Update</button>
   </form>
 </div>
-
+<br>
+<br>
 
 <!-- carrierwave placeholder code below -->
 <%= render partial: "/users/form" %>
 
-<div>
+<div class="container">
   <% @activities.each do |image| %>
-      <!-- div below is what you add to the display form for  -->
-      <div>
+    <div>
       <%= image_tag image.image_url(:thumb).to_s %>
-      <div><%= image.body %></div>
-      
+      <div><%= image.body %>
+      </div>   
       <div>
-        <%#= link_to "edit", edit_real_chart_activity(activity) %> |
-        <%#= link_to "remove", image, :confirm => 'Are you sure?', :method => :delete %>
+        <%#= link_to "edit", edit_real_chart_activity(activity) %><!--  | -->
+        <%#= link_to real_chart_activity_path(@real_chart.id, @user.id), image, method: :delete %>
       </div>
     </div>
   <% end %>

@@ -13,28 +13,26 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav navbar-nav">
     <li><a href="/"><b>Ideal Me</b></a></li>
-    <li><a href="/users/dashboard/">Charts</a></li>
-    <!-- <li><a href="/users/sign_in">User Signin</a></li> -->
+    <li><a href="/users/:id/dashboard">My Charts</a></li>
   </ul>
-  <div class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-        <li>Hello, <%=link_to current_user.email, edit_user_registration_path%> </li>
-        <li> <%= link_to "Account", edit_user_registration_path %></li>
-        <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
-      <% else %>
-
+  
+  <ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+      <p class="nav navbar-text">Hello,</p>
+      <li><%=link_to current_user.first_name, edit_user_registration_path%> </li>
+      <!-- <li> <%#= link_to "Account", edit_user_registration_path %></li> -->
+      <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+    <% else %>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <!-- <li><%#= link_to "Login", new_user_session_path %> </li> -->
+        
+      <li>
         <%= form_for :user, url: "/users/sign_in", method: :post do |f| %>
-          <%= f.label :email %>
-          <%= f.email_field :email, :autofocus => true %>
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-
-          <%= f.submit "Sign in" %>
-          <% end %>
-
-        <li> <%= link_to "Sign up", new_user_registration_path %> </li>
-        <li> <%= link_to "Login", new_user_session_path %> </li>
-      <% end %>
-    </div>    
-  </div> 
+          <%= f.email_field :email, placeholder: "email", :autofocus => true %>
+          <%= f.password_field :password, placeholder: "password" %>
+          <%= f.submit "Login", class: "btn btn-primary btn-sm" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul> 
 </nav>
