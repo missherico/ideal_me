@@ -21,6 +21,5 @@ class UsersController < ApplicationController
     gon.socialInterests = socialArray
     gon.healthInterests = healthArray
     gon.intellectInterests = intellectArray
-    #binding.pry
   end
 end
