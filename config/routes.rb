@@ -14,7 +14,9 @@ IdealMe::Application.routes.draw do
     resources :real_charts
   end
 
-  resources :real_charts do 
+  post '/real_charts/nil/activities', to: "activities#create", as: :create_nil_activity 
+
+  resources :real_charts, :ideal_charts do 
     resources :activities
   end
 
