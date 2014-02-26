@@ -21,19 +21,23 @@
     <label>Intellect: </label> <input id='intellect' name='ideal_chart[intelllect_score]' value='<%= @idealchart.intellect_score %>'>
     <button name='button'>Update</button>
   </form>
-
 </div>
 
-<!-- Below code is for Carrierwave; note the potential bug in line 3:  <input id='activity_body' name='activity[body'> -->
-<%= form_for @activity, :html => {:multipart => true} do |f| %>
-  <%= f.error_messages %>
-  <%= f.hidden_field :real_chart_id %>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_field :body %>
-  </p>
-  <p>
-    <%= f.file_field :image %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+
+<!-- carrierwave placeholder code below -->
+<%= render partial: form %>
+
+<div>
+  <% @activities.each do |image| %>
+      <!-- div below is what you add to the display form for  -->
+      <div>
+      <%= image_tag activities.image_url.to_s %>
+      <div><%= activity.body %></div>
+      
+      <div>
+        <%#= link_to "edit", edit_real_chart_activity(activity) %> |
+        <%= link_to "remove", activity, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    </div>
+  <% end %>
+</div>

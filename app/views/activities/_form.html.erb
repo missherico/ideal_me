@@ -1,0 +1,18 @@
+
+<div>
+  <%= form_for @activity, :html => {:multipart => true} do |f| %>
+    <%= f.error_messages %>
+    <%= f.hidden_field :real_chart_id %>
+    <p>
+      <%= f.label :body %><br />
+      <%= f.text_field :body %>
+    </p>
+    
+    <!-- Added the below for the image -->
+    <p>
+      <%= f.file_field :image %>
+    </p>
+    
+    <p><%= f.submit %></p>
+  <% end %>
+</div>

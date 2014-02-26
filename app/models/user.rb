@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   has_many :real_charts
   has_many :ideal_charts
   has_many :interests
+  has_many :activities, through: :interests
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
