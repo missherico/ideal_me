@@ -89,13 +89,15 @@ window.onload = function () {
       newActivity.category_id = selectedVal;
       _this.saveActivity(newActivity, function(data){
         console.log(data);
+        console.log(newActivity);
         var chartData = chart.options.data[0].dataPoints;
-        if (data.activity.category_id === "1"){
-          chartData[0].activity.push(newActivity.body);
-        } else if (data.activity.category_id === "2") {
-          chartData[1].activity.push(newActivity.body);
+        console.log(chartData);
+        if (data.activity.category_id === 1){
+          console.log(chartData[1]);chartData[1].activity.unshift(newActivity.body);
+        } else if (data.activity.category_id === 2) {
+          console.log(chartData[0]);chartData[0].activity.unshift(newActivity.body);
         } else {
-          chartData[2].activity.push(newActivity.body);
+          console.log(chartData[2]);chartData[2].activity.unshift(newActivity.body);
         }
         chart.render();
       });
