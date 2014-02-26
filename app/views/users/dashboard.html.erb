@@ -25,13 +25,13 @@
 
 
 <!-- carrierwave placeholder code below -->
-<%= render partial: form %>
+<%= render partial: "/users/form" %>
 
 <div>
   <% @activities.each do |image| %>
       <!-- div below is what you add to the display form for  -->
       <div>
-      <%= image_tag activities.image_url.to_s %>
+      <%= image_tag activities.image_url(:thumb).to_s %>
       <div><%= activity.body %></div>
       
       <div>
