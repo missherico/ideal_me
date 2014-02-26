@@ -74,12 +74,20 @@ window.onload = function () {
     return this;
   };
 
+
   Activity.doThis(function(){
     var _this = this;
 
+    var popShift = function(chartData, index, newActivity){
+      if (chartData[index].activity.length === 5){
+        chartData[index].activity.pop();
+      } 
+    chartData[index].activity.unshift(newActivity.body);
+    };
+      
+
     $("#addActivity").on("submit", function(event){
       event.preventDefault();
-
       var newActivity = {body: $("#activity_body").val()};
       var selectedVal = "";
       var selected = $("input[type='radio'][name='activity[cateogry_id]']:checked");
@@ -88,16 +96,13 @@ window.onload = function () {
       }
       newActivity.category_id = selectedVal;
       _this.saveActivity(newActivity, function(data){
-        console.log(data);
-        console.log(newActivity);
         var chartData = chart.options.data[0].dataPoints;
-        console.log(chartData);
         if (data.activity.category_id === 1){
-          console.log(chartData[1]);chartData[1].activity.unshift(newActivity.body);
+          popShift(chartData, 1, newActivity);
         } else if (data.activity.category_id === 2) {
-          console.log(chartData[0]);chartData[0].activity.unshift(newActivity.body);
+          popShift(chartData, 0, newActivity);
         } else {
-          console.log(chartData[2]);chartData[2].activity.unshift(newActivity.body);
+          popShift(chartData, 2, newActivity);
         }
         chart.render();
       });
@@ -107,22 +112,41 @@ window.onload = function () {
 
   });
 
+  var formatedChartData = function(){
+       var dataPoints = [
+       {  y: gon.idealchart.health_score, indexLabel: "Health", activity: gon.healthInterests },
+       {  y: gon.idealchart.social_score, indexLabel: "Social", activity: gon.socialInterests },
+       {  y: gon.idealchart.intellect_score, indexLabel: "Intellect", activity: gon.intellectInterests },
+       ];
+
+       $(dataPoints).each(function(index, dataSet){
+          dataSet.activity = dataSet.activity.splice(0,5);
+          var activities = dataSet.activity;
+          
+          $(activities).each(function(index, item){
+            if(index === 0){
+              activities[index] = "<div>"+item;
+            } else if (index === activities.length - 1){
+              activities[index]= "</div><div>"+item+"</div>";
+            } else {
+              activities[index] = "</div><div>"+item;
+            }
+         });
+       }); 
+
+       return {
+       type: "doughnut",
+       toolTipContent: "<div>{activity}</div>",
+       dataPoints: dataPoints
+        };
+      };
+
   var chart = new CanvasJS.Chart("idealChartContainer",
     {
       title:{
         text: "Ideal Chart"
       },
-      data: [
-      {
-       type: "doughnut",
-       toolTipContent: "{activity}",                
-       dataPoints: [
-       {  y: gon.idealchart.health_score, indexLabel: "Health", activity: gon.healthInterests },
-       {  y: gon.idealchart.social_score, indexLabel: "Social", activity: gon.socialInterests },
-       {  y: gon.idealchart.intellect_score, indexLabel: "Intellect", activity: gon.intellectInterests },
-       ]
-     }
-     ]
+      data: [formatedChartData()]
    });
 
     chart.render();
