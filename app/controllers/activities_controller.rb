@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
        Interest.create(user_id: current_user.id, activity_id: @activity.id)
     end
     respond_to do |format|
-      format.html
+      format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @activity}
     end
   end

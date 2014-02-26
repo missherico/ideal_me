@@ -31,12 +31,12 @@
   <% @activities.each do |image| %>
       <!-- div below is what you add to the display form for  -->
       <div>
-      <%= image_tag activities.image_url(:thumb).to_s %>
-      <div><%= activity.body %></div>
+      <%= image_tag image.image_url(:thumb).to_s %>
+      <div><%= image.body %></div>
       
       <div>
         <%#= link_to "edit", edit_real_chart_activity(activity) %> |
-        <%= link_to "remove", activity, :confirm => 'Are you sure?', :method => :delete %>
+        <%#= link_to "remove", image, :confirm => 'Are you sure?', :method => :delete %>
       </div>
     </div>
   <% end %>

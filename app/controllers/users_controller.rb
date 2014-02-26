@@ -7,5 +7,7 @@ class UsersController < ApplicationController
     interests = Interest.find_by(user_id: @user.id)
     # @activites
     # gon.interests =  @interests.a
+    @activities = Activity.all
+    @real_chart = RealChart.find_by(user_id: @user.id)
   end
 end

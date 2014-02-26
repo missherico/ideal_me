@@ -1,7 +1,9 @@
 
 <div>
-  <%= form_for @activity, :html => {:multipart => true} do |f| %>
-    <%= f.error_messages %>
+  <%= form_for :activity, url: real_chart_activities_path(@real_chart.id), method: :post, :html => {:multipart => true} do |f| %>
+
+<!-- new_real_chart_activity_path -->
+    <%#= f.error_messages %>
     <%= f.hidden_field :real_chart_id %>
     <p>
       <%= f.label :body %><br />
@@ -12,7 +14,11 @@
     <p>
       <%= f.file_field :image %>
     </p>
-    
+    <p>
+      <%= f.label :remote_image_url, "or image URL" %>
+      <%= f.text_field :remote_image_url %>
+    </p>
+
     <p><%= f.submit %></p>
   <% end %>
 </div>
