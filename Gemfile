@@ -28,6 +28,7 @@ gem 'active_model_serializers'
 gem 'gon'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
