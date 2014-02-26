@@ -15,5 +15,11 @@ class Activity < ActiveRecord::Base
   belongs_to :real_chart
 
   has_many :interests
+
+  def self.find_by_user_id_and_category_id(user_id, category_id)
+    joins(:interests)
+      .where('interests.user_id = ?', user_id)
+      .where('activities.category_id = ?', category_id)
+  end
   
 end
