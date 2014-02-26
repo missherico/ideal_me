@@ -14,7 +14,6 @@ window.onload = function () {
   };
 
 
-
   IdealData.updateIdealData = function(data, callback){
     $.ajax ({ 
       url : this.urls.update.path + gon.user_id + '/ideal_charts/' + gon.idealchart.id+".json",
