@@ -22,4 +22,5 @@ class Activity < ActiveRecord::Base
       .where('activities.category_id = ?', category_id)
   end
   
+  mount_uploader :image, ImageUploader
 end

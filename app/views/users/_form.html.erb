@@ -1,0 +1,21 @@
+
+<div class="container">
+  <h4> Enter an activity: </h4>
+</div>
+<div class="container">
+  <%= form_for :activity, url: real_chart_activities_path(@real_chart.id), method: :post, :html => {:multipart => true} do |f| %>
+    <%= f.hidden_field :real_chart_id %>
+    <p>
+      <%= f.text_field :body, placeholder: "activity" %>
+    </p> 
+    Or
+    <p>
+      <%= f.file_field :image %>
+    </P>
+    <!-- <p> -->
+      <!-- The below is for uploading via image url -->
+      <%#= f.text_field :remote_image_url, placeholder: "or enter an image URL" %>
+    <!-- </p> -->
+    <p><%= f.submit "Save", class: "btn btn-success"%></p>
+  <% end %>
+</div>
