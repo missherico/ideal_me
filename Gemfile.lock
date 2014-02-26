@@ -197,6 +197,7 @@ GEM
     redis (3.0.7)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
+    rmagick (2.13.2)
     rspec (3.0.0.beta2)
       rspec-core (= 3.0.0.beta2)
       rspec-expectations (= 3.0.0.beta2)
@@ -299,6 +300,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   rails_12factor
   rb-fsevent
+  rmagick
   rspec-rails (~> 3.0.0.beta)
   sass-rails (~> 4.0.0)
   sdoc
