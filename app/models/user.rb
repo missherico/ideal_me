@@ -58,7 +58,7 @@ class User < ActiveRecord::Base
   end
 
   def weekday_of_last_activity_date
-    number_of_day = last_activity_date
+    number_of_day = last_activity_date.wday
     case number_of_day
     when 0
       return "Sunday"
