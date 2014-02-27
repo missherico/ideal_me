@@ -28,8 +28,6 @@ class User < ActiveRecord::Base
   has_many :interests
   has_many :activities, through: :interests
 
-  has_many :activities, through: :interests
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable      
 
