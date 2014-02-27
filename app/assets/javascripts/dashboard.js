@@ -1,6 +1,16 @@
 window.onload = function () {
 
   
+  $('#new_activity').submit(function(){
+    $('#first_activity').hide();  
+  });
+
+  $('#new_activity').submit(function(){
+    $('#realChartContainer').show();  
+  });
+  
+
+
   // instantiate IdealData
   // this will hold all of the functions and data needed to create a chart
   var IdealData = {};
@@ -190,6 +200,7 @@ window.onload = function () {
         selectedVal = selected.val();
       }
       newActivity.category_id = selectedVal;
+      newActivity.real_chart_id = gon.realChart;
       _this.saveActivity(newActivity, function(data){
         var chartData = chartReal.options.data[0].dataPoints;
         if (data.activity.category_id === 1){

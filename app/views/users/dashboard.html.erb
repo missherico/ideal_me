@@ -1,10 +1,19 @@
 <div class='row'>
 
 <div id='realArea' class ='col-xs-12 col-md-6' >
-<div id='realChartContainer' style="height: 500px; width: 100%;">
-</div>
+<% if @real_chart.activities.empty? %>
+  <div id='first_activity'>
+  <h3>Below is an example of a real chart. Enter an activity below to make your own!</h3>
+  <%= render partial: '/users/stand_in' %>
 
-<%= render partial: "/users/real_activity_form" %>
+  <h3>Enter an activity to start your real chart!</h3>
+  <%= render partial: "/users/first_activity_form" %>
+  </div>
+<% else %>
+  <div id='realChartContainer' style="height: 500px; width: 100%;">
+  </div>
+  <%= render partial: "/users/real_activity_form" %>
+<% end %>
 
 
 </div>
