@@ -167,6 +167,7 @@ window.onload = function () {
 
 
   Activity.saveActivity = function(activityReal, callback){
+    console.log(activityReal);
     var data = { activity : activityReal };
     $.ajax({
       url : this.urls.create.path + gon.realChart + "/activities.json",
@@ -202,6 +203,7 @@ window.onload = function () {
       newActivity.category_id = selectedVal;
       newActivity.real_chart_id = gon.realChart;
       _this.saveActivity(newActivity, function(data){
+        console.log(newActivity);
         var chartData = chartReal.options.data[0].dataPoints;
         if (data.activity.category_id === 1){
           popShift(chartData, 1, newActivity);
@@ -220,7 +222,7 @@ window.onload = function () {
 
   RealData.updateChart = function(newActivity){
     var chartData = chartReal.options.data[0].dataPoints;
-
+    console.log(chartData);
     if (newActivity.category_id === "1"){
       chartData[1].y += 1;
     } else if (newActivity.category_id === "2"){
@@ -233,8 +235,8 @@ window.onload = function () {
   };    
 
   var dataPointsReal =[
-    {  y: gon.realSocialActivitesCount, indexLabel: "Health", activity: gon.realSocialActivites },
-    {  y: gon.realHealthActivitesCount, indexLabel: "Social", activity: gon.realHealthActivites },
+    {  y: gon.realSocialActivitesCount, indexLabel: "Health", activity: gon.realHealthActivites },
+    {  y: gon.realHealthActivitesCount, indexLabel: "Social", activity: gon.realSocialActivites },
     {  y: gon.realIntellectActivitesCount, indexLabel: "Intellect", activity: gon.realIntellectActivites }
   ];
 
