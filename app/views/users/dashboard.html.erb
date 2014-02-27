@@ -1,24 +1,31 @@
-<div id='idealChartContainer' style="height: 300px; width: 100%;">
+<div class='row'>
+
+<div id='realArea' class ='col-xs-12 col-md-6' >
+<div id='realChartContainer' style="height: 500px; width: 100%;">
 </div>
 
-<div class="container">
+<%= render partial: "/users/real_activity_form" %>
+
+
+</div>
+<div id="idealArea" class ='col-xs-12 col-md-6'>
+<div id='idealChartContainer' style="height: 500px; width: 100%;">
+</div>
+
+<div class='text-center'>
   <form id='updateIdeal'>
-    <label>Health:</label> <input id='health' name='ideal_chart[health_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.health_score %>'>
-    <label>Social: </label> <input id='social' name='ideal_chart[social_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.social_score %>'>
-    <label>Intellect: </label> <input id='intellect' name='ideal_chart[intelllect_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.intellect_score %>'>
+    <label>Health:&nbsp;&nbsp;&nbsp;&nbsp;</label><input id='health' name='ideal_chart[health_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.health_score %>' size="4"><br>
+    <label>Social:&nbsp;&nbsp;&nbsp;&nbsp;</label><input id='social' name='ideal_chart[social_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.social_score %>' size="4"><br>
+    <label>Intellect:&nbsp;</label><input id='intellect' name='ideal_chart[intelllect_score]' placeholder=" Enter Ideal %" value='<%= @idealchart.intellect_score %>' size="4"><br>
     <button class='btn btn-success'>Update</button>
   </form>
 </div>
+<br>
 
+<%= render partial: "/users/ideal_interest_form" %>
 
-<div>
-<form id='addActivity'>
-  <label>A new interest:</label> <input id='activity_body' name='activity[body]'><br>
-  <label>Social:</label> <input type="radio" id='social_cat' name="activity[cateogry_id]" value="1">
-  <label>Health:</label> <input type="radio" id='health_cat' name="activity[cateogry_id]" value="2">
-  <label>Intellect:</label> <input type="radio" id='intellect_cat' name="activity[cateogry_id]" value="3"><br>
-  <button name='button'>Save</button>
-</form>
+</div>
+
 
 </div>
 <br>
