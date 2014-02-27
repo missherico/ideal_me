@@ -1,56 +1,64 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
   def dashboard
     @user = current_user
-    @idealchart = IdealChart.find_by(user_id: @user.id)
-    gon.user_id = current_user.id
-    gon.watch.idealchart = @idealchart.attributes
+    if IdealChart.find_by(user_id: @user.id).nil?
+      redirect_to (new_ideal_chart_path) and return
+    else
+      @idealchart = IdealChart.find_by(user_id: @user.id)
+      gon.user_id = current_user.id
+      gon.watch.idealchart = @idealchart.attributes
+    end
 
-    # JS - ideal interests 
-    socialInterests = Activity.find_by_user_id_and_category_id(@user.id, 1)
-    healthInterests = Activity.find_by_user_id_and_category_id(@user.id, 2)
-    intellectInterests = Activity.find_by_user_id_and_category_id(@user.id, 3)
+    if RealChart.find_by(user_id: @user.id).nil?
+      @activity = Activity.new
+    else
+      # JS - ideal interests 
+      socialInterests = Activity.find_by_user_id_and_category_id(@user.id, 1)
+      healthInterests = Activity.find_by_user_id_and_category_id(@user.id, 2)
+      intellectInterests = Activity.find_by_user_id_and_category_id(@user.id, 3)
 
-    idealSocialArray = []
-    getBody(idealSocialArray, socialInterests)
+      idealSocialArray = []
+      getBody(idealSocialArray, socialInterests)
 
-    idealHealthArray = []
-    getBody(idealHealthArray, healthInterests)
+      idealHealthArray = []
+      getBody(idealHealthArray, healthInterests)
 
-    idealIntellectArray = []
-    getBody(idealIntellectArray, intellectInterests)
+      idealIntellectArray = []
+      getBody(idealIntellectArray, intellectInterests)
 
-    gon.idealSocialInterests = idealSocialArray
-    gon.idealHealthInterests = idealHealthArray
-    gon.idealIntellectInterests = idealIntellectArray
-    
-    # instances for carrier upload / image upload
-    @activities = Activity.all
-    @real_chart = RealChart.find_by(user_id: @user.id)
+      gon.idealSocialInterests = idealSocialArray
+      gon.idealHealthInterests = idealHealthArray
+      gon.idealIntellectInterests = idealIntellectArray
+      
+      # instances for carrier upload / image upload
+      @activities = Activity.all
+      @real_chart = RealChart.find_by(user_id: @user.id)
 
-    # JS - real chart
-    user_social_activites = Activity.where(real_chart_id: @real_chart.id).where(category_id: 1)
-    user_health_activites = Activity.where(real_chart_id: @real_chart.id).where(category_id: 2)
-    user_intellect_activites = Activity.where(real_chart_id: @real_chart.id).where(category_id: 3)
+      # JS - real chart
+      user_social_activites = Activity.where(real_chart_id: @real_chart.id).where(category_id: 1)
+      user_health_activites = Activity.where(real_chart_id: @real_chart.id).where(category_id: 2)
+      user_intellect_activites = Activity.where(real_chart_id: @real_chart.id).where(category_id: 3)
 
-    gon.realSocialActivitesCount = user_social_activites.count
-    gon.realHealthActivitesCount = user_health_activites.count
-    gon.realIntellectActivitesCount = user_intellect_activites.count
+      gon.realSocialActivitesCount = user_social_activites.count
+      gon.realHealthActivitesCount = user_health_activites.count
+      gon.realIntellectActivitesCount = user_intellect_activites.count
 
-    realSocialArray = []
-    getBody(realSocialArray, user_social_activites)
+      realSocialArray = []
+      getBody(realSocialArray, user_social_activites)
 
-    realHealthArray = []
-    getBody(realHealthArray, user_health_activites)
+      realHealthArray = []
+      getBody(realHealthArray, user_health_activites)
 
-    realIntellectArray = []
-    getBody(realIntellectArray, user_intellect_activites)
+      realIntellectArray = []
+      getBody(realIntellectArray, user_intellect_activites)
 
-    gon.realSocialActivites = realSocialArray
-    gon.realHealthActivites = realHealthArray
-    gon.realIntellectActivites = realIntellectArray
+      gon.realSocialActivites = realSocialArray
+      gon.realHealthActivites = realHealthArray
+      gon.realIntellectActivites = realIntellectArray
 
-    gon.realChart = @real_chart.id
-
+      gon.realChart = @real_chart.id
+    end
   end
 
 
