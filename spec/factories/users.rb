@@ -18,7 +18,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #
-
+# sequence(:email) { |n| "foo#{n}@example.com"}
 FactoryGirl.define do 
 	factory :user do |f|
 		f.first_name "Rick"

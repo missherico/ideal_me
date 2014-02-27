@@ -10,8 +10,8 @@ class SignupMailer < MandrillMailer::TemplateMailer
                 subject: 'Welcome',
                 to: { email: user.email},
                 vars: {
-                  "FIRST_NAME" => user.first_name || "NO FIRST NAME",
-                  "LAST_NAME"  => user.last_name || "NO LAST NAME"
+                  "FIRST_NAME" => user.first_name || "",
+                  "LAST_NAME"  => user.last_name || ""
                 }              
   end
   

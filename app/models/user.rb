@@ -57,5 +57,30 @@ class User < ActiveRecord::Base
       return (time_since_last_activity < 432000)
   end
 
+  def weekday_of_last_activity_date
+    number_of_day = last_activity_date.wday
+    case number_of_day
+    when 0
+      return "Sunday"
+    when 1
+      return "Monday"
+    when 2
+      return "Tuesday"
+    when 3
+      return "Wednesday" 
+    when 4
+      return "Thursday"
+    when 5
+      return "Friday"
+    else
+      return "Saturday" 
+    end
+  end
+      
+
+
+
+
+
 
 end
