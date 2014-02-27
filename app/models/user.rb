@@ -35,8 +35,29 @@ class User < ActiveRecord::Base
 
   after_create :welcome_email
 
+
   def welcome_email
     SignupMailer.signup(self).deliver
+  end  
+
+  def last_activity_date
+    #if the user hasn't entered anything for ideal chart or hasn't entered an activity
+    # return the time they signed in
+    if self.real_charts.empty? ||  self.real_charts.joins(:activities).empty?
+      return self.created_at
+    else 
+      # else find the time of the last activity entered
+      return self.real_charts.joins(:activities).last.created_at
+    end 
   end
+
+
+  def recently_active?
+     time_since_last_activity = Time.now - last_activity_date
+     # 5 days = 432,000 seconds, if the time they were last active is less than 5 days, return true
+     # else return false
+      return (time_since_last_activity < 432000)
+  end
+
 
 end
