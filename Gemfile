@@ -18,12 +18,16 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+#gem used fro sending transactional emails through Mandrill
+gem 'mandrill_mailer'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 gem 'devise'
 gem 'unicorn'
 gem 'sidekiq'
+gem 'sidetiq'
 gem 'active_model_serializers'
 gem 'gon'
 gem 'carrierwave'
