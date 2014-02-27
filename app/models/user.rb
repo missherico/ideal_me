@@ -40,10 +40,6 @@ class User < ActiveRecord::Base
     SignupMailer.signup(self).deliver
   end  
 
-  # def reminder_email
-  #   EmailWorker.perform_async()
-  # end
-
   def last_activity_date
     #if the user hasn't entered anything for ideal chart or hasn't entered an activity
     # return the time they signed in

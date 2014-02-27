@@ -1,10 +1,6 @@
 class ReminderMailer < MandrillMailer::TemplateMailer
    default from: 'miss.herico@gmail.com'
-  # def signup
-  #    mandrill_mail template: "Welcome",template_name: "Welcome",
-  #    subject: I18n.t('Welcome'),
-  #    to: [{email: "syviecottrell@gmail.com"}]
-  # end
+
   def remind(user)
   mandrill_mail template: 'Reminder',
                 subject: 'How are you progressing',
