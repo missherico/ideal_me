@@ -6,8 +6,8 @@ class ReminderMailer < MandrillMailer::TemplateMailer
                 subject: 'How are you progressing',
                 to: { email: user.email},
                 vars: {
-                  "FIRST_NAME" => user.first_name || "NO FIRST NAME",
-                  "LAST_NAME"  => user.last_name || "NO LAST NAME",
+                  "FIRST_NAME" => user.first_name || "",
+                  "LAST_NAME"  => user.last_name || ""
                  }              
   end
   
