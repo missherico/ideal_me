@@ -6,10 +6,12 @@ class EmailWorker
 
 
   def perform()
-     @users = User.all
-     @users.each do |user|
-       unless user.recently_active?
-         ReminderMailer.remind(user).deliver 
+    @users = User.all
+    @users.each do |user|
+      unless user.recently_active?
+      ReminderMailer.remind(user).deliver 
        end
      end
   end
+
+end
