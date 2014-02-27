@@ -12,10 +12,7 @@ class ReminderMailer < MandrillMailer::TemplateMailer
                 vars: {
                   "FIRST_NAME" => user.first_name || "NO FIRST NAME",
                   "LAST_NAME"  => user.last_name || "NO LAST NAME",
-                  "LAST_ACTIVITY" => user.activities.last.body || 'NO ACTIVITY'
-                  "LAST_ACTIVITY_TIME" => "on" + user.activities.last.created_at || ''
-.
-                }              
+                 }              
   end
   
 
