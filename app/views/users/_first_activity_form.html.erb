@@ -1,0 +1,13 @@
+<%= form_for :activity, url: real_chart_activities_path(@real_chart.id), html: { :id => "new_activity" } do |f| %>
+  <%= f.hidden_field :real_chart_id, value: @real_chart.id%>
+  <%= f.label :body %>:
+  <%= f.text_field :body %>
+  <%= f.label(:social, "Social") %>
+  <%= f.radio_button(:category_id, 1) %>
+  <%= f.label(:health, "Health") %>
+  <%= f.radio_button(:category_id, 2) %>
+  <%= f.label(:intellect, "Intellect") %>
+  <%= f.radio_button(:category_id, 3) %>
+  <%= f.submit %>
+<% end %>
+

@@ -1,6 +1,6 @@
 <h1>Create your ideal chart</h1>
 
-<%= form_for @idealchart, url: user_ideal_charts_path, method: :post do |f| %>
+<%= form_for @idealchart, url: user_ideal_charts_path(current_user.id), method: :post do |f| %>
   <%= f.text_field :health_score, placeholder: "Health %" %><br>
   <%= f.text_field :social_score, placeholder: "Social %" %><br>
   <%= f.text_field :intellect_score, placeholder: "Intellect %" %><br>
