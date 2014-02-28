@@ -9,6 +9,11 @@ window.onload = function () {
     $('#realChartContainer').show();  
   });
   
+  window.submitImage = function(){
+    if ($('#activity_image').val().length > 0){
+      $('#image_form').submit();
+    }
+  };
 
 
   // instantiate IdealData
@@ -173,6 +178,8 @@ window.onload = function () {
       type : this.urls.create.method,
       data : data}).done(callback);
   };
+
+
 
   Activity.doThis = function(fn){
     fn.apply(Activity);
