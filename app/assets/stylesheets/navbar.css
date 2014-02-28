@@ -2,3 +2,28 @@
 #logout {
   padding-right: 30px;
 }
+
+.navbar-background {
+  background-color: #3498db;
+/*  background-color: rgba(0,0,0,0.75);*/
+  border: 0;
+  border-radius: 0;
+  font-size: 15px;
+}
+
+.navbar .nav > li > a {
+    color:  rgba(255,255,255,1);
+
+}
+
+/*@media (max-width: 768px){
+    .navbar-nav{
+        text-align: center;
+    }
+}*/
+
+/*@media (max-width: 768px){
+  .nav navbar-nav navbar-nav{
+    text-align: center;
+    }
+  }*/

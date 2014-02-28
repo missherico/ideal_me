@@ -12,25 +12,39 @@
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav navbar-nav">
+    <li><a class="navbar-brand" href="/"><b>The Ideal.Me</b></a></li>
+  </ul>
+    <ul class="nav navbar-nav navbar-nav">
     <% if user_signed_in? %>
-    <li class="nav navbar-text">Hello, <%=link_to current_user.first_name, edit_user_registration_path%> </li>
     <li><%= link_to "My Dashboard", user_dashboard_path(current_user.id) %></li>
+    <!-- <li><%#= link_to "My Activities", user_show_path(current_user.id) %></li> -->
     <% else %>
     <% end %>
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <% if user_signed_in? %>
-
+      <li> <%=link_to current_user.email, edit_user_registration_path%> </li>
       <li id="logout"> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
     <% else %>
-      <li><%= link_to "Get a dashboard!", new_user_registration_path %></li>
-      <li class="nav navbar-text">
-        <%= form_for :user, url: "/users/sign_in", method: :post do |f| %>
-          <%= f.email_field :email, placeholder: "email", :autofocus => true %>
-          <%= f.password_field :password, placeholder: "password" %>
-          <%= f.submit "Login", class: "btn btn-primary btn-sm" %> &nbsp; &nbsp;
+      <li><%= link_to "Create Dashboard!", new_user_registration_path %></li>
+      <div class="nav navbar-text">
+        <%= form_for :user, url: "/users/sign_in", method: :post, html: {class: "form-inline", role: "form"} do |f| %>
+
+          <div class="col-xs-1 visible-xs"></div>
+          <div class="form-group">
+            <label class="sr-only" for="user_email">Email address</label>
+            <%= f.email_field :email, placeholder: "email", :autofocus => true, class: "form-control" %>   
+          </div>
+          <div class="col-xs-1 visible-xs"></div>
+          <div class="form-group">
+            <label class="sr-only" for="user_password">Password</label>
+             <%= f.password_field :password, placeholder: "password", class: "form-control"%> 
+          </div>
+         
+          
+          <%= f.submit "Login", class: "btn btn-default" %> 
         <% end %>
-      </li>
+      </div>
     <% end %>
-  </ul> 
+    </ul> 
 </nav>
