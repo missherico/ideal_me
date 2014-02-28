@@ -1,24 +1,29 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="div-login">
+  <h2 class="h2-sign"> Sign up</h2>
 
-   <div><%= f.label :'First name' %><br />
-  <%= f.text_field :first_name, :autofocus => true %></div>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-   <div><%= f.label :'Last name' %><br />
-  <%= f.text_field :last_name, :autofocus => true %></div>
+     <div><%#= f.label :'First name' %><br />
+    <%= f.text_field :first_name, placeholder: "first name", size: 25, :autofocus => true %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+     <div><%#= f.label :'Last name' %><br />
+    <%= f.text_field :last_name, placeholder: "last name", size: 25 %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    <div><%#= f.label :email %><br />
+    <%= f.email_field :email, placeholder: "my_email@domain.com", size: 25 %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+    <div><%#= f.label :password %><br />
+    <%= f.password_field :password, placeholder: "password", size: 25 %></div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+    <div><%#= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, placeholder: "password confirmation", size: 25 %></div>
+    <br>
 
-<%= render "devise/shared/links" %>
+    <div><%= f.submit "Get started!", class: "btn btn-success btn-lg"%></div>
+    <p>
+  <% end %>
+
+  <strong>  <%= render "devise/shared/links" %> </strong>
+</div>
