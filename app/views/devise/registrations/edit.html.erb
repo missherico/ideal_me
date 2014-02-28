@@ -2,7 +2,7 @@
 <div class="div-login">
 
   <!-- <h2 class="h2-sign">Edit <%= resource_name.to_s.humanize %></h2> -->
-  <h2>Edit Account</h2>
+  <h2 class="h2-sign">Edit Account</h2>
   <!-- <h2>Edit <%#= resource_name.to_s.humanize %></h2> -->
 
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
@@ -36,7 +36,7 @@
     <br>
 
   <strong>Unhappy?</strong>
-  <%= button_to "Cancel account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, class: "btn btn-primary btn-sm" %>
+  <%= button_to "Cancel account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, class: "btn btn-success btn-sm" %>
   <p>
 
   <%#= button_to "Back", :back, class: "btn btn-success btn-sm" %>

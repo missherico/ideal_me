@@ -1,6 +1,6 @@
 
 <div class="div-login">
-  <h2>Forgot your password?</h2>
+  <h2 class="h2-sign">Forgot your password?</h2>
   <!-- <h2 class="h2-sign">Forgot your password?</h2> -->
 
   <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
@@ -10,7 +10,7 @@
     <%= f.email_field :email, placeholder: "my_email@domain.com", size: 25, :autofocus => true %></div>
     <p>
 
-    <div><%= f.submit "Send Reset Email", class: "btn btn-primary btn-md" %></div>
+    <div><%= f.submit "Send Reset Email", class: "btn btn-success btn-md" %></div>
   <% end %>
   <p>
   <p>
