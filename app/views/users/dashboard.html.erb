@@ -12,9 +12,11 @@
 <% else %>
   <div id='realChartContainer' style="height: 500px; width: 100%;">
   </div>
+  <div class='text-center'>
   <button name='button' id='showAddActivityForm' class='btn btn-success'>Enter An Activity</button> <button name='button' id='showAddImageForm' class='btn btn-success'>Upload An Image</button>
   <%= render partial: "/users/real_activity_form" %>
   <%= render partial: "/users/form" %>
+  </div>
 <% end %>
 
 
@@ -35,19 +37,6 @@
 
 <%= render partial: "/users/ideal_interest_form" %>
 </div>
-</div>
-
-<div class="container">
-  <% @activities.each do |image| %>
-    <div>
-      <%= image_tag image.image_url(:thumb).to_s %>
-      <div><%= image.body %>
-        <%#= link_to "edit", edit_real_chart_activity(activity) %><!--  | -->
-        <%= button_to "delete", real_chart_activity_path(@real_chart.id, image.id), method: :delete, class: "btn btn-primary btn-sm" %>
-      </div>
-      <br>
-    </div>
-  <% end %>
 </div>
 
 
