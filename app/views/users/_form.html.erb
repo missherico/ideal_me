@@ -1,13 +1,19 @@
-
-<div class="container">
-  <h4>Or add an image: </h4>
-</div>
-<div class="container">
-  <%= form_for :activity, url: real_chart_activities_path(@real_chart.id), method: :post, :html => {id: "image_form", :multipart => true} do |f| %>
+<div class='text-center' id='addImageForm'>
+  <h4>Upload your image:</h4>
+  <%= form_for :activity, url: real_chart_activities_path(@real_chart.id), method: :post, :html => {id: "image_form", :multipart => true, class: "form-horizontal"} do |f| %>
     <%= f.hidden_field :real_chart_id %> 
-    <p>
-      <%= f.file_field :image %>
-    </P>
-    <p><%= f.submit style: "display: none;"%></p>
+      <div class="form-group">
+    <div class="col-xs-4 visible-xs"></div>
+    <div class="col-xs-offset-4 col-xs-6">
+      <div class="checkbox">
+
+        <label>
+           <%= f.file_field :image %>
+        </label>
+      </div>
+    </div>
+  </div>
+    <p>Note all images will be shown in your profile.</p>
+    <%= f.submit "Upload", class: 'btn btn-success'%>
   <% end %>
 </div>
