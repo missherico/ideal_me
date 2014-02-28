@@ -1,2 +1,41 @@
-<h1>Site#index</h1>
-<p>Find me in app/views/site/index.html.erb</p>
+<h1 class='text-center'>Become the ideal you with ideal.ME</h1>
+<br />
+<br />
+<div class='row'>
+<div class='col-xs-9'>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag('benchmark-idealme.png')%>
+        <div class="carousel-caption">
+          <p>&nbsp;</p>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag('define-interests.png')%>
+        <div class="carousel-caption">
+          <p>&nbsp;</p>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag('get-there.png')%>
+        <div class="carousel-caption">
+          <p>&nbsp;</p>
+        </div>
+      </div>  
+    </div>
+  <%= button_to "Create a Dashboard.", new_user_registration_path, :method => :get, class: "btn btn-primary btn-lg col-xs-offset-12 sign-up-btn" %>
+  </div>
+
+</div>
+
+</div>
+</div>
