@@ -12,7 +12,6 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    #binding.pry
     new_activity = params.require(:activity).permit(:category_id, :real_chart_id, :body, :image)
     @activity = Activity.create(new_activity)
     if @activity.real_chart_id == nil
