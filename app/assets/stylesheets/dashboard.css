@@ -10,3 +10,11 @@
   height: 500px; 
   width: 100%;
 }
+
+#addActivityForm {
+  display: none;
+}
+
+#addImageForm {
+  display: none;
+}

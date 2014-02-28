@@ -9,11 +9,15 @@ window.onload = function () {
     $('#realChartContainer').show();  
   });
   
-  window.submitImage = function(){
-    if ($('#activity_image').val().length > 0){
-      $('#image_form').submit();
-    }
-  };
+  $('#showAddImageForm').click(function(){
+    $('#addImageForm').css({ "display": 'inline'});
+    $('#addActivityForm').css({ "display": 'none'});
+  });
+
+  $('#showAddActivityForm').click(function(){
+    $('#addActivityForm').css({ "display": 'inline'});
+    $('#addImageForm').css({ "display": 'none'});
+  });
 
 
   // instantiate IdealData

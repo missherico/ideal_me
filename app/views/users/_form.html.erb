@@ -1,13 +1,10 @@
-
-<div class="container">
+<div class="container" id='addImageForm' style="display: none">
   <h4>Or add an image: </h4>
-</div>
-<div class="container">
   <%= form_for :activity, url: real_chart_activities_path(@real_chart.id), method: :post, :html => {id: "image_form", :multipart => true} do |f| %>
     <%= f.hidden_field :real_chart_id %> 
     <p>
       <%= f.file_field :image %>
     </P>
-    <p><%= f.submit style: "display: none;"%></p>
+    <p><%= f.submit%></p>
   <% end %>
 </div>
