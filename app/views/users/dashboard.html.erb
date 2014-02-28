@@ -1,13 +1,16 @@
 <div class='row'>
 
-<div id='realArea' class ='col-xs-12 col-md-6' >
+<div id='realArea' class ='col-xs-12 col-sm-6' >
 <% if @real_chart.activities.empty? %>
   <div id='first_activity'>
-  <h3>Below is an example of a real chart. Enter an activity below to make your own!</h3>
-  <%= render partial: '/users/stand_in' %>
-
   <h3>Enter an activity to start your real chart!</h3>
   <%= render partial: "/users/first_activity_form" %>
+
+  <h5>Below is an example of a real chart. Enter an activity below to make your own!</h5>
+  <div id='stand-in'>
+    <%= render partial: '/users/stand_in' %>
+  </div>
+
   </div>
 <% else %>
   <div id='realChartContainer' style="height: 500px; width: 100%;">
@@ -21,7 +24,7 @@
 
 
 </div>
-<div id="idealArea" class ='col-xs-12 col-md-6'>
+<div id="idealArea" class ='col-xs-12 col-sm-6'>
 <div id='idealChartContainer' style="height: 500px; width: 100%;">
 </div>
 

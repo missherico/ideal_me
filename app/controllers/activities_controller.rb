@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-    redirect_to user_dashboard_path(current_user.id)
+    # redirect_to user_dashboard_path(current_user.id)
   end
 
   def create
