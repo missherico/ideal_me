@@ -157,8 +157,15 @@ window.onload = function () {
         };
   };
 
+  CanvasJS.addColorSet("ourShades",
+    [//colorSet Array
+      "#f1c40f",
+      "#2ecc71",
+      "#8e44ad"                
+    ]);
   var chartIdeal = new CanvasJS.Chart("idealChartContainer",
     {
+      colorSet: 'ourShades',
       title:{
         text: "Ideal Chart"
       },
@@ -250,6 +257,7 @@ window.onload = function () {
 
   var chartReal = new CanvasJS.Chart("realChartContainer",
   {
+      colorSet: 'ourShades',
       title:{
         text: "Real Chart"
       },
