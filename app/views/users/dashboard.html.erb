@@ -13,6 +13,7 @@
   <div id='realChartContainer' style="height: 500px; width: 100%;">
   </div>
   <%= render partial: "/users/real_activity_form" %>
+  <%= render partial: "/users/form" %>
 <% end %>
 
 
@@ -32,16 +33,8 @@
 <br>
 
 <%= render partial: "/users/ideal_interest_form" %>
-
 </div>
-
-
 </div>
-<br>
-<br>
-
-<!-- carrierwave placeholder code below -->
-<%= render partial: "/users/form" %>
 
 <div class="container">
   <% @activities.each do |image| %>
@@ -55,3 +48,5 @@
     </div>
   <% end %>
 </div>
+
+
