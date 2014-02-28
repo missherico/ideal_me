@@ -3,6 +3,10 @@
 
   <!-- <h2 class="h2-sign">Edit <%= resource_name.to_s.humanize %></h2> -->
   <h2 class="h2-sign">Edit Account</h2>
+<<<<<<< HEAD
+=======
+  <!-- <h2>Edit <%#= resource_name.to_s.humanize %></h2> -->
+>>>>>>> upstream/master
 
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
     <%= devise_error_messages! %>
@@ -30,7 +34,7 @@
     <%= f.password_field :current_password, placeholder: "confirm current password", size: 25 %></div>
     <br>
 
-    <div><%= f.submit "Update", class: "btn btn-success btn-lg"%> </div>
+    <div><%= f.submit "Update", class: "btn btn-primary btn-lg"%> </div>
   <% end %>
     <br>
 
