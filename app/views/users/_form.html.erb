@@ -4,7 +4,7 @@
 </div>
 <div class="container">
   <%= form_for :activity, url: real_chart_activities_path(@real_chart.id), method: :post, :html => {id: "image_form", :multipart => true} do |f| %>
-    <%= f.hidden_field :real_chart_id %> 
+    <%= f.hidden_field :real_chart_id, value: @real_chart.id  %> 
     <p>
       <%= f.file_field :image %>
     </P>

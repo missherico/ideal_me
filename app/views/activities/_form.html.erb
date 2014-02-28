@@ -2,7 +2,7 @@
 <div>
   <%= form_for @activity, :html => {:multipart => true} do |f| %>
     <%= f.error_messages %>
-    <%= f.hidden_field :real_chart_id %>
+    <%= f.hidden_field :real_chart_id, value: @real_chart.id %>
     <p>
       <%= f.label :body %><br />
       <%= f.text_field :body %>

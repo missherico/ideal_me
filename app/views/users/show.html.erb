@@ -46,7 +46,7 @@
    <h4>All the pictures </h4>
    <!--  Show pictures -->
     <div class="container">
-           <% activities_with_picture = current_user.real_charts[0].activities.where("image is not NULL")%>
+           <% activities_with_picture = current_user.activities.where("image is not NULL")%>
            <% activities_with_picture.each do |image| %>
              <div>
                  <%= image.body %>
