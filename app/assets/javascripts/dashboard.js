@@ -121,6 +121,7 @@ window.onload = function () {
           popShift(chartData, 2, newInterest);
         }
         chartIdeal.render();
+        alert('interest successfully created');
       });
     });
 
@@ -229,6 +230,7 @@ window.onload = function () {
           popShift(chartData, 2, newActivity);
         }
       RealData.updateChart(newActivity);
+      alert('activity successfully created');
       });
     });
 
