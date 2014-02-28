@@ -1,12 +1,13 @@
 <br/><br/><br/>
-<h1>My Profile Page</h1> 
+<h1 class='profile'>My Profile Page</h1><br/><br/>
 
    <!-- 
    Show activities by category -->
+   <div class="container activities"
    <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-md-4"><h3>Social</h3>
-               <div class="well">
+            <div class="col-xs-12 col-sm-4"><h3 class="act">Social</h3>
+               <div class="social">
                  <% user_social_activities = current_user.real_charts[0].activities.where(category_id: 1)%>
                   <% user_social_activities.each do |social_activity| %>
                   <p>
@@ -17,8 +18,8 @@
                </div>
             </div>
             
-            <div class="col-xs-6 col-md-4"><h3>Health</h3>
-                <div class="well">
+            <div class="col-xs-12 col-sm-4"><h3 class="act">Health</h3>
+                <div class="health">
                     <% user_health_activities = current_user.real_charts[0].activities.where(category_id: 2)%>
                   <% user_health_activities.each do |health_activity| %>
                   <p>
@@ -29,31 +30,35 @@
                 </div>
             </div>
 
-            <div class="col-xs-6 col-md-4"><h3>Intellect</h3>
-                <div class="well">
+            <div class="col-xs- col-sm-4"><h3 class="act">Intellect</h3>
+                <div class="intellect">
+                  <p>
                     <% user_intellect_activities = current_user.real_charts[0].activities.where(category_id: 3)%>
                   <% user_intellect_activities.each do |intellect_activity| %>
-                  <p>
+                  <div>
                     <%= intellect_activity.body %><br/>
                     <em><%= intellect_activity.created_at.month %>/<%= intellect_activity.created_at.day %>/<%= intellect_activity.created_at.year %></em>
-                  </p>
+                  </div>
+                </p>
                   <% end %>
                </div>
             </div>
           </div>  
     </div>
     
-   <h4>All the pictures </h4>
+   
    <!--  Show pictures -->
-    <div class="container">
+    <div class="container pictures">
+      <h3 class='memory'>Memory</h3>
+    >
            <% activities_with_picture = current_user.activities.where("image is not NULL")%>
-           <% activities_with_picture.each do |image| %>
-             <div>
-                 <%= image.body %>
-              <%= image_tag image.image_url(:thumb).to_s %>
-          </div>
+           <% activities_with_picture.each do |image| %> 
+          
+              <%= image_tag image.image_url(:thumb).to_s, class: 'show-img' %>
+           
              
            <% end %>
+</div>
 </div>
 
     

@@ -1,0 +1,44 @@
+.show-img {
+  padding: 10px;
+  max-height: 150px;
+  border-radius: 5px;
+}
+
+.social, .health, .intellect{
+  padding: 10px 20px 10px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+.social{
+  background-color: rgba(241, 196, 15, 1);
+}
+.health{
+  background-color: rgba(46, 204, 113, 1);
+}
+
+.intellect{
+  background-color: rgba(142, 68, 173, .9);
+}
+
+.profile, .memory{
+  text-align: center;
+}
+.pictures{
+  padding-top: 30px;
+}
+
+.memory{
+  padding-bottom: 30px;
+
+}
+.activities{
+  padding_top: 30px;
+}
+.act{
+  text-align: center;
+}
+
