@@ -9,8 +9,8 @@
   border-radius: 8px;
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
 }
-
 
 
 .social{
@@ -36,7 +36,7 @@
 
 }
 .activities{
-  padding_top: 30px;
+  padding-top: 30px;
 }
 .act{
   text-align: center;

@@ -17,7 +17,7 @@
     <ul class="nav navbar-nav navbar-nav">
     <% if user_signed_in? %>
     <li><%= link_to "My Dashboard", user_dashboard_path(current_user.id) %></li>
-    <!-- <li><%#= link_to "My Activities", user_show_path(current_user.id) %></li> -->
+    <li><%= link_to "My Activities", "/users/#{"current_user.id"}" %></li>
     <% else %>
     <% end %>
   </ul>
