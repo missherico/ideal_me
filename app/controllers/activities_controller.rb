@@ -17,10 +17,6 @@ class ActivitiesController < ApplicationController
     @activity = Activity.create(new_activity)
     if @activity.real_chart_id == nil
        current_user.interests.create(activity_id: @activity.id)
-       
-       realchart = RealChart.new
-       realchart.user_id = current_user.id
-       realchart.save
     end
     respond_to do |format|
       format.html {redirect_to user_dashboard_path(current_user.id)}
