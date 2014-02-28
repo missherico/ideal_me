@@ -1,7 +1,7 @@
 
 <div class="div-login">
-  <h2 class="h2-sign"> Sign up</h2>
-
+  <!-- <h2 class="h2-sign"> Sign up</h2> -->
+  <h2> Sign up</h2>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
@@ -21,7 +21,7 @@
     <%= f.password_field :password_confirmation, placeholder: "password confirmation", size: 25 %></div>
     <br>
 
-    <div><%= f.submit "Get started!", class: "btn btn-success btn-lg"%></div>
+    <div><%= f.submit "Get started!", class: "btn btn-primary btn-lg"%></div>
     <p>
   <% end %>
 
