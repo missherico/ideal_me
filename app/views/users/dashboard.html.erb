@@ -1,24 +1,30 @@
 <div class='row'>
 
-<div id='realArea' class ='col-xs-12 col-md-6' >
+<div id='realArea' class ='col-xs-12 col-sm-6' >
 <% if @real_chart.activities.empty? %>
   <div id='first_activity'>
-  <h3>Below is an example of a real chart. Enter an activity below to make your own!</h3>
-  <%= render partial: '/users/stand_in' %>
-
   <h3>Enter an activity to start your real chart!</h3>
   <%= render partial: "/users/first_activity_form" %>
+
+  <h5>Below is an example of a real chart. Enter an activity below to make your own!</h5>
+  <div id='stand-in'>
+    <%= render partial: '/users/stand_in' %>
+  </div>
+
   </div>
 <% else %>
   <div id='realChartContainer' style="height: 500px; width: 100%;">
   </div>
+  <div class='text-center'>
+  <button name='button' id='showAddActivityForm' class='btn btn-success'>Enter An Activity</button> <button name='button' id='showAddImageForm' class='btn btn-success'>Upload An Image</button>
   <%= render partial: "/users/real_activity_form" %>
   <%= render partial: "/users/form" %>
+  </div>
 <% end %>
 
 
 </div>
-<div id="idealArea" class ='col-xs-12 col-md-6'>
+<div id="idealArea" class ='col-xs-12 col-sm-6'>
 <div id='idealChartContainer' style="height: 500px; width: 100%;">
 </div>
 
@@ -34,19 +40,6 @@
 
 <%= render partial: "/users/ideal_interest_form" %>
 </div>
-</div>
-
-<div class="container">
-  <% @activities.each do |image| %>
-    <div>
-      <%= image_tag image.image_url(:thumb).to_s %>
-      <div><%= image.body %>
-        <%#= link_to "edit", edit_real_chart_activity(activity) %><!--  | -->
-        <%= button_to "delete", real_chart_activity_path(@real_chart.id, image.id), method: :delete, class: "btn btn-primary btn-sm" %>
-      </div>
-      <br>
-    </div>
-  <% end %>
 </div>
 
 

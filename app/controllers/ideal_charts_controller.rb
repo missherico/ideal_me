@@ -18,10 +18,14 @@ class IdealChartsController < ApplicationController
     realchart = RealChart.new
     realchart.user_id = current_user.id
     realchart.save
+    
     respond_to do |format|
       format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @idealchart}
-    end
+    end  
+
+
+
    end
 
   

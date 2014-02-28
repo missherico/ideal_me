@@ -7,6 +7,18 @@
 }*/
 
 #stand_in {
-  height: 500px; 
+  height: 100%; 
   width: 100%;
 }
+
+#addActivityForm {
+  display: none;
+}
+
+#addImageForm {
+  display: none;
+}
+
+/*.container-image {
+  margin-left: 240px;
+}*/
