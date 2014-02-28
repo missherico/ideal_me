@@ -2,7 +2,7 @@
 <h3>Enter an activity to start your real chart!</h3>
 <%= form_for :activity, url: real_chart_activities_path(@real_chart.id), html: { :id => "new_activity" } do |f| %>
   <%= f.hidden_field :real_chart_id, value: @real_chart.id%>
-  <%= f.label :body %>:
+  <%= f.label "Activity" %>:
   <%= f.text_field :body %>
   <%= f.label(:social, "Social") %>
   <%= f.radio_button(:category_id, 1) %>
