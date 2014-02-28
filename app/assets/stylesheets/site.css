@@ -1,9 +1,4 @@
-#car {
-margin:auto;
-}
-
-carousel-inner > .item > img, 
-.carousel-inner > .item > a > img{
-width: 100%; /* use this, or not */
-margin: auto;
+.carousel.slide {
+	margin: auto;
+	padding-left: 50px;
 }
