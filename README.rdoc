@@ -2,26 +2,19 @@
 
 This web application is hand-crafted by do gooders: Eli, Spencer, Sylvie, Isa.
 
-Things you may want to cover:
+Ideal.ME will help you get to where you want to be.  You create an Ideal Chart and divide out the percentage of your time per day you would like to devote to each of the three categories: Social, Health, Intellect.  Then, create interests around those categories as reminders of what you would like to work on.  After those two are set, you get another chart that is based on real activities that you enter.
 
-* Ruby version
+* This app lives at: http://idealme.herokuapp.com
 
-* System dependencies
+* Powered by:  Ruby (2.0) on Rails (4),
+      Postgres, Redis, Amazon S3, Canvas.js, Bootstrap
 
-* Configuration
+* Gems we used:
+    * Devise
+    * Active Model Serializer
+    * Mandrill Mailer
+    * Gon
+    * Carrierwave, Fog, RMagic
+    * Sidekiq, Sidetiq, Unicorn
+    * Factory Girl Rails
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
