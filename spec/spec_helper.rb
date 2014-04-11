@@ -52,3 +52,4 @@ RSpec.configure do |config|
   config.include ValidUserRequestHelper, :type => :request
 
 end
+
