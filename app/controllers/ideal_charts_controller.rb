@@ -1,15 +1,15 @@
 class IdealChartsController < ApplicationController
-   before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
-   def index
+  def index
     @idealcharts = IdealChart.all
-   end
+  end
 
-   def new
+  def new
     @idealchart = IdealChart.new
-   end
+  end
 
-   def create
+  def create
     new_user_id = current_user.id
     new_idealchart = params.require(:ideal_chart).permit(:health_score, :social_score, :intellect_score)
     @idealchart = IdealChart.new(new_idealchart)
@@ -23,27 +23,22 @@ class IdealChartsController < ApplicationController
       format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @idealchart}
     end  
+  end
 
-
-
-   end
-
-  
-
-   def update
+  def update
     @idealchart = IdealChart.find(params[:id])
     @idealchart.update_attributes(params.require(:ideal_chart).permit(:health_score, :social_score, :intellect_score))
     respond_to do |format|
       format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @idealchart}
     end
-   end
+  end
 
-   def show
+  def show
     @idealchart = IdealChart.find(params[:id])
     respond_to do |format|
       format.html {redirect_to user_dashboard_path(current_user.id)}
       format.json {render json: @idealchart}
     end
-   end
+  end
 end
