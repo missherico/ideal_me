@@ -27,19 +27,19 @@ Ideal Chart.
 * Factory Girl Rails
 
 ### Dashboard Preview
-![Alt text](screenshots/dashboard.png "Dashboard Preview")
+![Alt text](assets/screenshots/dashboard.png "Dashboard Preview")
 
 ### Profile Page Preview
-![Alt text](screenshots/profile_page.png "Profile Page Preview")
+![Alt text](assets/screenshots/profile_page.png "Profile Page Preview")
 
 ## How to install
 1. Fork this repository
 2. Clone to your local machine 
 3. Run bundler
 4. Set up secret keys for:
-* SECRET_KEY_BASE
-* MANDRILL_APIKEY
-* AWS_ACCESS_KEY_ID
-* AWS_SECRET_ACCESS_KEY 
-* AWS_S3_BUCKET
+  * SECRET_KEY_BASE
+  * MANDRILL_APIKEY
+  * AWS_ACCESS_KEY_ID
+  * AWS_SECRET_ACCESS_KEY 
+  * AWS_S3_BUCKET
 5. Set UNICORN_WORKERS=2
