@@ -27,10 +27,10 @@ Ideal Chart.
 * Factory Girl Rails
 
 ### Dashboard Preview
-![Alt text](assets/screenshots/dashboard.png "Dashboard Preview")
+![Alt text](app/assets/screenshots/dashboard.png "Dashboard Preview")
 
 ### Profile Page Preview
-![Alt text](assets/screenshots/profile_page.png "Profile Page Preview")
+![Alt text](app/assets/screenshots/profile_page.png "Profile Page Preview")
 
 ## How to install
 1. Fork this repository
