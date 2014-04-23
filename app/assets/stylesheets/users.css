@@ -27,8 +27,12 @@
 .profile, .memory{
   text-align: center;
 }
-.pictures{
-  padding-top: 30px;
+
+.profile_pictures{
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 5px;
+  padding:1px;
 }
 
 .memory{
